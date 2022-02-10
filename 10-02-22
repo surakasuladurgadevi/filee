@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<string.h>
+void main()
+{
+    FILE *f;
+    int i;
+    char name[10];
+    float salary;
+    f=fopen("test.c","w");
+    if(f==NULL)
+    {
+        printf("file could not be open");
+        exit(1);
+    }
+    for(i=0;i<2;i++)
+    {
+        printf("enter name");
+        scanf("%s",name);
+        printf("enter salary");
+        scanf("%f",&salary);
+        fprintf(f,"(%d)name:[%-10,10s]\t salary%5.2f",i,name,salary);
+    }
+}
